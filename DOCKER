@@ -1,0 +1,13 @@
+sudo snap install docker
+
+docker --version
+
+sudo docker run hello-world
+
+sudo docker images 
+
+sudo docker ps -a 
+
+sudo docker pull centos
+
+sudo docker run -it centos
