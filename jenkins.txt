@@ -1,0 +1,38 @@
+cd deskstop
+mkdir cdac
+cd cdac
+git init
+nano one.txt -->type one
+nano two.txt -->type two
+git status 
+git config --global user.email "ghumashruti@gmail.com"
+git config --global user.name 
+
+
+
+
+
+
+
+
+
+sudo apt install default-jre
+wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+
+sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+sudo apt update 
+sudo apt install jenkins
+
+sudo systemctl start jenkins
+
+sudo systemctl status jenkins
+
+sudo systemctl enable jenkins
+ip a
+go to browser http//10.0.2.15:8080
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+copy password nd paste at browser
+install pulgin
+install dependency
+after that add new item ->freestyle project ok
+
