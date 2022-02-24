@@ -1,0 +1,141 @@
+cd deskstop
+mkdir cdac
+cd cdac
+git init
+nano one.txt -->type one
+nano two.txt -->type two
+git status 
+git config --global user.email "ghumashruti@gmail.com"
+git config --global user.name  "ShrutiSSG"
+git commit -m "new added"
+cd 
+cd .ssh/
+ls
+ssh-keyjen
+enter id_rsa
+enter 
+enter
+ls
+cat id_rsa.pub copy key nd-> 
+go to broswer settings ssh&key create new key ->paste key nd save
+back to terminal
+git remote add origin1 "git@github.com:ShrutiSSG/demo.git"
+git pull origin1 master
+git pull origin1 master --allow-unrelated-histories 
+ctrl+x
+git branch -m master
+git push origin1 master 
+ls
+
+***jenkins****
+sudo apt install default-jre
+wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+
+sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+sudo apt update 
+sudo apt install jenkins
+
+sudo systemctl start jenkins
+
+sudo systemctl status jenkins
+
+sudo systemctl enable jenkins
+ip a
+go to browser http//10.0.2.15:8080
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+copy password nd paste at browser a10b6612468149ceb614450839ab50d8
+install pulgin
+install dependency
+after that add new item ->freestyle project ok
+
+
+
+
+
+
+ *********OPENSTACK*****
+sudo snap install microstack --edge --devmode
+ sudo microstack init --auto --control
+microstack launch cirros --name shruti
+sudo snap get microstack config.credentials.keystone-password
+go to browser  https://10.20.20.1:443
+admin nd password 
+
+
+
+*****CD/pipeline*****
+
+cd deckstop/ditiss
+create file on terminal
+cat hello.java
+class hello
+{
+	public static void main(String[]args)
+	{
+		System.out.println("HELLO IACSD");
+	}
+}
+=============================================
+cat s1.sh
+#! /bin/bash
+
+pwd
+ls
+echo "script is running"
+=======================================
+run javac hello.java
+sudo apt install default-jdk   
+git add s1.sh
+git add hello.java
+git status
+git commit -m "new "
+git push origin1 master
+go to dashboard then ->new item 
+type new item name ->click on pipeline ok
+deescription new pipline
+the bottom pipline syntax is there click->sample steps select  git git
+back nd 
+go to github project nd paste https://github.com/ShrutiSSG/demo/
+build trigger-H/3 * * * *
+
+pipeline script 
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('SCM') {
+            steps {
+                git 'https://github.com/ShrutiSSG/demo'
+            }
+        }
+        stage('File Exist') {
+            steps {
+                fileExists 'hello.java'
+            }
+        }
+          stage('File Compile') {
+            steps {
+                sh '''javac hello.java'''
+            }
+        }
+        stage('File Output') {
+            steps {
+                sh '''java hello'''
+            }
+        }
+        
+    }
+}
+save apply
+go to back nd build now -> click on console output
+
+
+
+
+
+ 
